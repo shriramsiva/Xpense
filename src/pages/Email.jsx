@@ -6,10 +6,10 @@ import { Message, useToaster} from 'rsuite';
 export const ContactUs = () => {
   const form = useRef();
   const [activeKey, setActiveKey] = React.useState(null);
-  const [type, setType] = React.useState('success');
-  const [typeForm, setFormType] = React.useState('error');
+  const [type] = React.useState('success');
+  const [typeForm] = React.useState('error');
 
-  const [placement, setPlacement] = React.useState('bottomStart');
+  const [placement] = React.useState('bottomStart');
 
   const toaster = useToaster();
 

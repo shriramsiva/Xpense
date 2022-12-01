@@ -2,8 +2,7 @@ import React , { useState } from 'react';
 import {emailValidator, passwordValidator} from '../components/regexValidator';
 import {useHistory} from "react-router-dom"
 import axios from "axios";
-import { Modal, ButtonToolbar, Button,Badge,Notification, Placeholder, 
-	useToaster, SelectPicker} from 'rsuite';
+import { Notification,useToaster} from 'rsuite';
 
 const Login = () => {
     const history = useHistory()
@@ -18,8 +17,8 @@ const Login = () => {
 
 		const [user, setUser] = useState([]);
 
-		const [type, setType] = React.useState('info');
-		const [placement, setPlacement] = React.useState('bottomStart');
+		const [type] = React.useState('info');
+		const [placement] = React.useState('bottomStart');
 		const toaster = useToaster();
 		const userEmail = localStorage.getItem('user');
 
@@ -61,12 +60,8 @@ const Login = () => {
       
 
         const userss = user.find((users) => users.email === input.email && users.pass === input.password);
-        console.log(userss)
 
-         if(input.email !== '' ){
-			console.log(input.email)
-		 }
-        // seterrorMessage('Invalid email or password');
+        
         if (!userss) 
             return seterrorMessage('Invalid email or password');
         
@@ -75,7 +70,6 @@ const Login = () => {
 		localStorage.setItem('user',input.email)    
 		toaster.push(message, { placement })
 
-		console.log(localStorage.getItem('user') )     
 
     };
 

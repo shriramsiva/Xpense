@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
-import { Message, useToaster, ButtonToolbar, SelectPicker, Button } from 'rsuite';
+import { Message, useToaster } from 'rsuite';
 
 
 // Initial state
@@ -14,8 +14,8 @@ export const GlobalContext = createContext(initialState);
 // Provider component
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
-  const [type, setType] = React.useState('success');
-  const [placement, setPlacement] = React.useState('bottomStart');
+  const [type] = React.useState('success');
+  const [placement] = React.useState('bottomStart');
   const toaster = useToaster();
 
   const message = (

@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState';
-import { Message, useToaster,DatePicker, Stack, RadioGroup} from 'rsuite';
+import { Message, useToaster} from 'rsuite';
 import { CustomNavbar } from "./Navbar";
 
 export const AddTransaction = () => {
@@ -14,9 +14,9 @@ export const AddTransaction = () => {
 
   const { addTransaction } = useContext(GlobalContext);
 
-  const [type, setType] = React.useState('success');
-  const [typeForm, setFormType] = React.useState('warning');
-  const [placement, setPlacement] = React.useState('bottomStart');
+  const [type] = React.useState('success');
+  const [typeForm] = React.useState('warning');
+  const [placement] = React.useState('bottomStart');
   const toaster = useToaster();
 
   const message = (
@@ -37,9 +37,6 @@ export const AddTransaction = () => {
    setDate(k)
   }
 
-  const changeFruit = () => {
-    setText(text)
-  }
  
   const onSubmit = e => {
     e.preventDefault();
@@ -83,10 +80,6 @@ export const AddTransaction = () => {
     } 
 
   }
-
- 
-
-
 
   return (
     <>

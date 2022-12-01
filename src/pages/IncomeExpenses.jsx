@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-import CreditCardPlusIcon from '@rsuite/icons/CreditCardPlus';
 
 //Money formatter function
 function moneyFormatter(num) {
